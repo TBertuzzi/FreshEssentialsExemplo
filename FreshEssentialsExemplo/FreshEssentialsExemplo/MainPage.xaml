@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FreshEssentialsExemplo"
+             x:Class="FreshEssentialsExemplo.MainPage"
+             xmlns:fe="clr-namespace:FreshEssentials;assembly=FreshEssentials" Padding="0,20,0,0">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Fresh Essentials!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <fe:SegmentedButtonGroup OnColor="Blue" OffColor="White" SelectedIndex="{Binding SelectIndex, Mode=TwoWay}" CornerRadius="5" HeightRequest="50" >
+                <fe:SegmentedButtonGroup.LabelStyle>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="12" />
+                        <Setter Property="FontAttributes" Value="Bold" />
+                    </Style>
+                </fe:SegmentedButtonGroup.LabelStyle>
+                <fe:SegmentedButtonGroup.SegmentedButtons>
+                    <fe:SegmentedButton Title="Button 0"/>
+                    <fe:SegmentedButton Title="Button 1"/>
+                    <fe:SegmentedButton Title="Button 2"/>
+                </fe:SegmentedButtonGroup.SegmentedButtons>
+            </fe:SegmentedButtonGroup>
+
+            <Label Text="{Binding SelectIndex, StringFormat='Você selecionou o Button {0}'}" HorizontalTextAlignment="Center"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
